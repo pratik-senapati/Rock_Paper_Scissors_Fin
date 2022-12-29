@@ -5,16 +5,21 @@ let arr=[1, 2, 3];
 let rock=document.querySelector("#rock");
 let paper=document.querySelector("#paper");
 let scissors=document.querySelector("#scissors");
-let count=0;
 let message=document.querySelector("#message");
 let comp=0;
 let player=0;
-let score=document.querySelector("")
+let score=document.querySelector("#score");
 
 function gameover()
 {
+    choice.forEach((user) => {
+    
+        user.disabled=true;
+        
+        });
+    
 
-}
+};
 choice.forEach((user) => {
     
     user.disabled=true;
@@ -31,68 +36,119 @@ function play()
         user.disabled=false;
         
         });
-    if(count==5)
-    {
-        message.textContent="Game Over";
-    }
     
-}
+};
 
 
 function random()
 {
-    return arr[Math.floor(Math.random())*arr.length];
+    return arr[Math.floor(Math.random()*3)];
 }
 
 function playround(item)
 {
+    start.disabled=true;
     let u=random();
+    score.className="choice";
     if(item==1)
     {
         if(u==1)
         {
-            "You both chose rock! They obliterated each other! You tie!";
+            message.textContent="You both chose rock! They obliterated each other! You tie!";
+            
         }
 
         else if(u==2)
         {
-            "Your rock was smothered by the paper! You lose!";
+            message.textContent="Your rock was smothered by the paper! You lose!";
             comp++;
 
         }
 
         else if(u==3)
         {
-            "Your rock was smothered by the paper! You win!";
-            
+            message.textContent="Your rock was obliterated scissors! You win!";
+            player++;
         }
+
+        score.textContent=`Player: ${player} Computer: ${comp}` ;
+    }
+
+    else if(item==2)
+    {
+        if(u==2)
+        {
+            message.textContent="You both chose paper! They strangled each other! You tie!";
+        }
+
+        else if(u==3)
+        {
+            message.textContent="Your paper was eviscerated by the scissors ! You lose!";
+            comp++;
+
+        }
+
+        else if(u==1)
+        {
+            message.textContent="Your paper strangled the rock! You win!";
+            player++;
+        }
+        score.textContent=`Player: ${player} Computer: ${comp}` ;
+    }
+    else if(item==3)
+    {
+        if(u==3)
+        {
+            message.textContent="You both chose scissors! They eviscerated each other! You tie!";
+        }
+
+        else if(u==2)
+        {
+            message.textContent="Your scissors was obliterated by the rock! You lose!";
+            comp++;
+
+        }
+
+        else if(u==3)
+        {
+            message.textContent="Your rock eviscerated the paper! You win!";
+            player++;
+        }
+        score.textContent=`Player: ${player} Computer: ${comp}` ;
     }
 
 
-}
+};
 
 function dis(item)
 {
     item.disabled=true;
-}
+};
 
 
 
 start.addEventListener('click',play);
-rock.addEventListener('click',playround(1));
-paper.addEventListener('click',playround(2));
-scissors.addEventListener('click',playround(3));
-rock.onclick=function()
+rock.addEventListener('click',function()
 {
-    count++;
+    playround(1);
 }
+);
 
-paper.onclick=function()
+paper.addEventListener('click',function()
 {
-    count++;
+    playround(2);
 }
+);
 
-rock.onclick=function()
+scissors.addEventListener('click',function()
 {
-    count++;
+    playround(3);
+}
+);
+
+if(player==5 || comp==5)
+{
+    console.log("hi");
+    message.textContent="Game Over";
+    gameover();
 }
