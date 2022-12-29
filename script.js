@@ -66,6 +66,7 @@ function playround(item)
         if(u==1)
         {
             message.textContent="You both chose rock! They obliterated each other! You tie!";
+            message.style.backgroundColor="#a0d6f7";
             
         }
 
@@ -93,6 +94,7 @@ function playround(item)
         if(u==2)
         {
             message.textContent="You both chose paper! They strangled each other! You tie!";
+            message.style.backgroundColor="#a0d6f7";
         }
 
         else if(u==3)
@@ -118,6 +120,7 @@ function playround(item)
         if(u==3)
         {
             message.textContent="You both chose scissors! They eviscerated each other! You tie!";
+            message.style.backgroundColor="#a0d6f7";
         }
 
         else if(u==2)
