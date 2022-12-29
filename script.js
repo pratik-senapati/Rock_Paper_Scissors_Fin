@@ -80,7 +80,7 @@ function playround(item)
 
         else if(u==3)
         {
-            message.textContent="Your rock was obliterated scissors! You win!";
+            message.textContent="Your rock obliterated scissors! You win!";
             player++;
             message.style.backgroundColor="#90EE90";
         }
