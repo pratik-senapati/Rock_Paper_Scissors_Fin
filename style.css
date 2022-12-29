@@ -1,0 +1,60 @@
+body
+{
+    background-color: #cfeafb;
+}
+
+
+
+
+.main
+{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.buttons
+{
+    display: flex;
+    flex-direction: column;
+
+    
+    
+}
+
+.start
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:50px;
+}
+
+.options
+{
+    display:flex;
+    justify-content: space-around;
+
+}
+
+.choice
+{   
+    background-color: #a0d6f7;
+    padding:25px;
+    border-radius: 10px;
+    border-color: #0f7abc;
+    width: 125px;
+    
+}
+
+.msg
+{
+    text-align: center;
+}
+
+.ch
+{
+    background-color: #a0d6f7;
+    padding: 50px;
+    border-radius: 100px;
+}
