@@ -46,10 +46,7 @@ function play()
         
         });
 
-   
-    
-
-    
+        message.textContent="Click on any of the options to play a round.";
 };
 
 
