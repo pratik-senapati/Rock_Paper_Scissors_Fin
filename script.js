@@ -17,9 +17,18 @@ function gameover()
         user.disabled=true;
         
         });
-    
+    start.value="Try Again?";
+    start.disabled=false;
+    start.removeEventListener('click',play);
+    start.addEventListener('click', function()
+    {
+        location.reload();
+        return;
+    })
+
 
 };
+
 choice.forEach((user) => {
     
     user.disabled=true;
@@ -36,6 +45,10 @@ function play()
         user.disabled=false;
         
         });
+
+   
+    
+
     
 };
 
@@ -72,6 +85,7 @@ function playround(item)
         }
 
         score.textContent=`Player: ${player} Computer: ${comp}` ;
+        ;
     }
 
     else if(item==2)
@@ -94,6 +108,7 @@ function playround(item)
             player++;
         }
         score.textContent=`Player: ${player} Computer: ${comp}` ;
+        
     }
     else if(item==3)
     {
@@ -115,8 +130,30 @@ function playround(item)
             player++;
         }
         score.textContent=`Player: ${player} Computer: ${comp}` ;
+       
     }
 
+    if(player==5)
+    {
+
+    }
+    if(player==5 || comp==5)
+    {
+        if(player==5)
+        {
+            message.textContent="YOU WIN!";
+            gameover();
+            return;
+        }
+        else if(comp==5)
+        {
+            message.textContent="YOU LOSE!";
+            gameover();
+            return;
+        }
+    
+    }
+    return;
 
 };
 
@@ -146,9 +183,4 @@ scissors.addEventListener('click',function()
 }
 );
 
-if(player==5 || comp==5)
-{
-    console.log("hi");
-    message.textContent="Game Over";
-    gameover();
-}
+
