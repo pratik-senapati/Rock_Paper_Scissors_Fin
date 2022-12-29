@@ -20,6 +20,7 @@ function gameover()
     start.value="Try Again?";
     start.disabled=false;
     start.removeEventListener('click',play);
+    start.style.backgroundColor="#90EE90";
     start.addEventListener('click', function()
     {
         location.reload();
@@ -72,6 +73,7 @@ function playround(item)
         {
             message.textContent="Your rock was smothered by the paper! You lose!";
             comp++;
+            message.style.backgroundColor="#FFCCCB";
 
         }
 
@@ -79,6 +81,7 @@ function playround(item)
         {
             message.textContent="Your rock was obliterated scissors! You win!";
             player++;
+            message.style.backgroundColor="#90EE90";
         }
 
         score.textContent=`Player: ${player} Computer: ${comp}` ;
@@ -96,6 +99,7 @@ function playround(item)
         {
             message.textContent="Your paper was eviscerated by the scissors ! You lose!";
             comp++;
+            message.style.backgroundColor="#FFCCCB";
 
         }
 
@@ -103,6 +107,8 @@ function playround(item)
         {
             message.textContent="Your paper strangled the rock! You win!";
             player++;
+            message.style.backgroundColor="#90EE90";
+            
         }
         score.textContent=`Player: ${player} Computer: ${comp}` ;
         
@@ -118,6 +124,7 @@ function playround(item)
         {
             message.textContent="Your scissors was obliterated by the rock! You lose!";
             comp++;
+            message.style.backgroundColor="#FFCCCB";
 
         }
 
@@ -125,6 +132,7 @@ function playround(item)
         {
             message.textContent="Your rock eviscerated the paper! You win!";
             player++;
+            message.style.backgroundColor="#90EE90";
         }
         score.textContent=`Player: ${player} Computer: ${comp}` ;
        
